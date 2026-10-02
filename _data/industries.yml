@@ -1,0 +1,31 @@
+﻿- num: "01"
+  name: "Restaurants & Cafes"
+  open: true
+
+- num: "02"
+  name: "Clothing & Fashion"
+  open: false
+
+- num: "03"
+  name: "Retail Shops & Stores"
+  open: false
+
+- num: "04"
+  name: "Salons & Wellness"
+  open: false
+
+- num: "05"
+  name: "Gyms & Fitness Studios"
+  open: false
+
+- num: "06"
+  name: "Clinics & Healthcare"
+  open: false
+
+- num: "07"
+  name: "Real Estate & Property"
+  open: false
+
+- num: "08"
+  name: "Startups & Local Services"
+  open: false

@@ -1,0 +1,49 @@
+﻿# Voltera Brand House â€” Jekyll Configuration
+title: "Voltera Brand House"
+description: "Digital Growth & Business Promotion for ambitious brands, restaurants, cafes, retail shops and local businesses. Content creation, Instagram growth, and paid promotion that turns your page into a real sales channel."
+url: "https://voltera.brandhouse.in"
+baseurl: ""
+
+author:
+  name: "Tushar Bhardwaj"
+  email: "Tusharbwaj2004@gmail.com"
+  phone: "+91 86038 34423"
+  instagram: "valtera.brandhouse"
+
+markdown: kramdown
+highlighter: rouge
+permalink: pretty
+
+sass:
+  sass_dir: _sass
+  style: compressed
+
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+twitter:
+  card: summary_large_image
+social:
+  name: Voltera Brand House
+  links:
+    - https://instagram.com/valtera.brandhouse
+
+defaults:
+  - scope:
+      path: ""
+      type: "pages"
+    values:
+      layout: "default"
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+  - "*.pdf"
+  - "*.ps1"
+  - "*.txt"
+  - "*.bin"
+  - "*.zip"
+  - poppler/

@@ -1,0 +1,39 @@
+﻿- id: starter
+  name: Starter
+  price: "Rs. 30,000"
+  contract: "4-month minimum"
+  highlight: false
+  best_for: "New & small businesses"
+  shoot_days: "1 day"
+  reels: 4
+  feed_posts: 4
+  story_posts: "Basic"
+  paid_ad: "Rs. 10,000"
+  model_shoot: "Add-on"
+
+- id: growth
+  name: Growth
+  price: "Rs. 40,000"
+  contract: "4-month minimum"
+  highlight: true
+  badge: "Most Popular"
+  best_for: "Steady business growth"
+  shoot_days: "2 days"
+  reels: 6
+  feed_posts: 6
+  story_posts: "Regular"
+  paid_ad: "Rs. 15,000"
+  model_shoot: "Included"
+
+- id: premium
+  name: Premium
+  price: "Rs. 50,000"
+  contract: "4-month minimum"
+  highlight: false
+  best_for: "Multi-outlet & established brands"
+  shoot_days: "4 days"
+  reels: 8
+  feed_posts: 8
+  story_posts: "Daily"
+  paid_ad: "Rs. 20,000"
+  model_shoot: "Included"
