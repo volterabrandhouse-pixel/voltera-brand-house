@@ -53,6 +53,10 @@ description: "We turn your social media into a real sales channel. Professional 
       <p class="thesis-body" data-reveal data-delay="2">The issue is not effort. It is strategy, consistency and execution quality &mdash; three things that take a dedicated team to get right, month after month.</p>
     </div>
 
+    <div class="thesis-visual" data-reveal aria-hidden="true">
+      <img src="{{ '/assets/images/thesis-photographer.jpg' | relative_url }}" alt="Professional photographer at work" width="1200" height="800" loading="lazy">
+    </div>
+
     <div class="thesis-problems">
       <div class="thesis-problem" data-reveal data-delay="1">
         <span class="thesis-problem-num">01</span>
@@ -96,55 +100,71 @@ description: "We turn your social media into a real sales channel. Professional 
       </div>
       <p class="services-subtext" data-reveal>Every layer of your digital presence &mdash; content creation, page management, paid ads and performance reporting. A full team, not a freelancer.</p>
     </div>
-    <div class="services-list" role="list">
-      <div class="svc-row" role="listitem" data-reveal>
-        <span class="svc-num">01</span>
-        <div class="svc-body">
-          <span class="svc-name">Content Shoots &mdash; Photo &amp; Reels</span>
-          <span class="svc-desc">Dedicated shoot days at your location capturing atmosphere, food, products and people &mdash; everything needed for weeks of premium content.</span>
+    <div class="services-visual-grid" role="list">
+      
+      <!-- Visual Card 1 -->
+      <div class="svc-card svc-card--visual" role="listitem" data-reveal>
+        <div class="svc-card-img">
+          <img src="{{ '/assets/images/service-photo.jpg' | relative_url }}" alt="Content Shoots" width="600" height="800" loading="lazy">
         </div>
-        <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-      </div>
-      <div class="svc-row" role="listitem" data-reveal data-delay="1">
-        <span class="svc-num">02</span>
-        <div class="svc-body">
-          <span class="svc-name">Instagram Page Management</span>
-          <span class="svc-desc">Full-service page operation &mdash; captions, hashtag strategy, story scheduling, highlight covers and engagement to build real community.</span>
+        <div class="svc-card-content">
+          <span class="svc-card-num">01</span>
+          <h3 class="svc-card-name">Content Shoots &mdash; Photo &amp; Reels</h3>
+          <p class="svc-card-desc">Dedicated shoot days at your location capturing atmosphere, food, products and people &mdash; everything needed for weeks of premium content.</p>
         </div>
-        <span class="svc-arrow" aria-hidden="true">&rarr;</span>
       </div>
-      <div class="svc-row" role="listitem" data-reveal data-delay="2">
-        <span class="svc-num">03</span>
-        <div class="svc-body">
-          <span class="svc-name">Reel Editing &amp; Video Production</span>
-          <span class="svc-desc">Short-form videos with trending audio, clean cuts, branded text overlays and an aesthetic that stops the scroll within two seconds.</span>
+
+      <!-- Text Card -->
+      <div class="svc-card svc-card--text" role="listitem" data-reveal data-delay="1">
+        <div class="svc-card-content">
+          <span class="svc-card-num">02</span>
+          <h3 class="svc-card-name">Instagram Page Management</h3>
+          <p class="svc-card-desc">Full-service page operation &mdash; captions, hashtag strategy, story scheduling, highlight covers and engagement to build real community.</p>
         </div>
-        <span class="svc-arrow" aria-hidden="true">&rarr;</span>
       </div>
-      <div class="svc-row" role="listitem" data-reveal data-delay="3">
-        <span class="svc-num">04</span>
-        <div class="svc-body">
-          <span class="svc-name">Meta Paid Ads &mdash; Facebook &amp; Instagram</span>
-          <span class="svc-desc">Locally targeted campaigns to put your best content in front of people in your area who are ready to visit, order or enquire.</span>
+
+      <!-- Visual Card 2 -->
+      <div class="svc-card svc-card--visual" role="listitem" data-reveal>
+        <div class="svc-card-img">
+          <img src="{{ '/assets/images/service-video.jpg' | relative_url }}" alt="Reel Editing" width="600" height="800" loading="lazy">
         </div>
-        <span class="svc-arrow" aria-hidden="true">&rarr;</span>
-      </div>
-      <div class="svc-row" role="listitem" data-reveal data-delay="4">
-        <span class="svc-num">05</span>
-        <div class="svc-body">
-          <span class="svc-name">Monthly Performance Reports</span>
-          <span class="svc-desc">A clear, jargon-free monthly summary covering reach, engagement, follower growth and ad results, with next-month recommendations.</span>
+        <div class="svc-card-content">
+          <span class="svc-card-num">03</span>
+          <h3 class="svc-card-name">Reel Editing &amp; Video Production</h3>
+          <p class="svc-card-desc">Short-form videos with trending audio, clean cuts, branded text overlays and an aesthetic that stops the scroll within two seconds.</p>
         </div>
-        <span class="svc-arrow" aria-hidden="true">&rarr;</span>
       </div>
-      <div class="svc-row" role="listitem" data-reveal data-delay="5">
-        <span class="svc-num">06</span>
-        <div class="svc-body">
-          <span class="svc-name">Brand Identity &amp; Bio Optimisation</span>
-          <span class="svc-desc">Profile revamp, highlight architecture, bio copywriting and a visual identity refresh so your page makes the right first impression.</span>
+
+      <!-- Text Card -->
+      <div class="svc-card svc-card--text" role="listitem" data-reveal data-delay="1">
+        <div class="svc-card-content">
+          <span class="svc-card-num">04</span>
+          <h3 class="svc-card-name">Meta Paid Ads &mdash; Facebook &amp; Instagram</h3>
+          <p class="svc-card-desc">Locally targeted campaigns to put your best content in front of people in your area who are ready to visit, order or enquire.</p>
         </div>
-        <span class="svc-arrow" aria-hidden="true">&rarr;</span>
       </div>
+
+      <!-- Visual Card 3 -->
+      <div class="svc-card svc-card--visual" role="listitem" data-reveal>
+        <div class="svc-card-img">
+          <img src="{{ '/assets/images/service-strategy.jpg' | relative_url }}" alt="Strategy & Reporting" width="600" height="800" loading="lazy">
+        </div>
+        <div class="svc-card-content">
+          <span class="svc-card-num">05</span>
+          <h3 class="svc-card-name">Strategy &amp; Monthly Reports</h3>
+          <p class="svc-card-desc">A clear, jargon-free monthly summary covering reach, engagement, follower growth and ad results, with next-month recommendations.</p>
+        </div>
+      </div>
+
+      <!-- Text Card -->
+      <div class="svc-card svc-card--text" role="listitem" data-reveal data-delay="1">
+        <div class="svc-card-content">
+          <span class="svc-card-num">06</span>
+          <h3 class="svc-card-name">Brand Identity &amp; Bio Optimisation</h3>
+          <p class="svc-card-desc">Profile revamp, highlight architecture, bio copywriting and a visual identity refresh so your page makes the right first impression.</p>
+        </div>
+      </div>
+
     </div>
   </div>
 </section>
@@ -168,6 +188,10 @@ description: "We turn your social media into a real sales channel. Professional 
         </div>
       </div>
       {% endfor %}
+    </div>
+
+    <div class="process-visual" data-reveal aria-hidden="true">
+      <img src="{{ '/assets/images/process-set.jpg' | relative_url }}" alt="Content production set" width="1600" height="900" loading="lazy">
     </div>
     <div class="process-expectations" data-reveal>
       <p class="process-expectations-label">What to expect over time</p>

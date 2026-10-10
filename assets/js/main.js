@@ -59,6 +59,7 @@ function openMobileMenu() {
   navToggle.setAttribute('aria-expanded', 'true');
   mobileMenu.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
+  if (siteHeader) siteHeader.classList.add('menu-is-open');
 }
 
 function closeMobileMenu() {
@@ -68,6 +69,7 @@ function closeMobileMenu() {
   navToggle.setAttribute('aria-expanded', 'false');
   mobileMenu.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
+  if (siteHeader) siteHeader.classList.remove('menu-is-open');
 }
 
 if (navToggle && mobileMenu) {
