@@ -1,8 +1,8 @@
 # Voltera Brand House â€” Jekyll Configuration
 title: "Voltera Brand House"
 description: "Digital Growth & Business Promotion for ambitious brands, restaurants, cafes, retail shops and local businesses. Content creation, Instagram growth, and paid promotion that turns your page into a real sales channel."
-url: "https://voltera.brandhouse.in"
-baseurl: ""
+url: "https://volterabrandhouse-pixel.github.io"
+baseurl: "/voltera-brand-house"
 
 author:
   name: "Tushar Bhardwaj"
