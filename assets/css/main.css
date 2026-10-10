@@ -132,10 +132,10 @@ ul, ol { list-style: none; }
 @media (max-width: 900px) {
   .overture { grid-template-columns: 1fr; }
   .overture-visual { grid-column: 1; grid-row: 1; position: absolute; inset: 0; z-index: 0; }
-  .overture-visual img { object-position: center 20%; }
-  .overture-visual::before { background: linear-gradient(to top, var(--bg-void) 30%, rgba(6,6,8,0.85) 60%, rgba(6,6,8,0.6) 100%); }
+  .overture-visual img { object-position: center 30%; }
+  .overture-visual::before { background: linear-gradient(to top, var(--bg-void) 10%, rgba(6,6,8,0.85) 50%, rgba(6,6,8,0.3) 100%); }
   .overture-content { grid-column: 1; grid-row: 1; justify-content: flex-end; padding-top: calc(var(--nav-h) + var(--sp-xl)); padding-bottom: calc(var(--sp-2xl) + 72px); max-width: 100%; margin-left: 0; min-height: 100vh; min-height: 100dvh; }
-  .overture-headline { font-size: clamp(2.3rem, 9.5vw, 3.5rem); line-height: 1.05; max-width: none; }
+  .overture-headline { font-size: clamp(2.8rem, 12vw, 4.5rem); line-height: 0.95; max-width: none; letter-spacing: -0.03em; margin-bottom: var(--sp-lg); }
   .overture-bottom { grid-template-columns: 1fr; gap: var(--sp-md); padding-top: var(--sp-md); }
   .overture-sub { max-width: 38ch; line-height: 1.6; font-size: 0.95rem; }
   .overture-actions { align-items: flex-start; flex-direction: row; flex-wrap: wrap; }
