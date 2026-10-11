@@ -6,19 +6,33 @@
 
 /* ----- PAGE LOADER --------------------------------------------- */
 const loadStartTime = Date.now();
-window.addEventListener('load', () => {
+const MIN_LOADER_DURATION = 1900; // ensures the 1.8s+ animation sequence finishes gracefully
+const MAX_LOADER_TIMEOUT = 4000;  // safety timeout to prevent getting stuck
+
+let loaderDismissed = false;
+
+function dismissLoader() {
+  if (loaderDismissed) return;
+  loaderDismissed = true;
+
   const loader = document.getElementById('page-loader');
   if (!loader) return;
-  const elapsed = Date.now() - loadStartTime;
-  const delay = Math.max(0, 2200 - elapsed);
-  
+
+  loader.classList.add('is-hidden');
   setTimeout(() => {
-    loader.classList.add('is-hidden');
-    setTimeout(() => {
-      document.querySelectorAll('.oh-inner').forEach(el => el.classList.add('is-visible'));
-    }, 500);
-  }, delay);
+    document.querySelectorAll('.oh-inner').forEach(el => el.classList.add('is-visible'));
+  }, 450);
+}
+
+// Coordinate window load event with minimum display duration
+window.addEventListener('load', () => {
+  const elapsed = Date.now() - loadStartTime;
+  const remaining = Math.max(0, MIN_LOADER_DURATION - elapsed);
+  setTimeout(dismissLoader, remaining);
 });
+
+// Fallback safety timeout if window load is delayed or stalled
+setTimeout(dismissLoader, MAX_LOADER_TIMEOUT);
 
 /* ----- CURSOR AMBIENT (desktop) -------------------------------- */
 const cursorGlow = document.getElementById('cursor-glow');
