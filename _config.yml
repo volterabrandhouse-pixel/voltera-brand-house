@@ -40,7 +40,6 @@ exclude:
   - vendor
   - "*.pdf"
   - "*.ps1"
-  - "*.txt"
   - "*.bin"
   - "*.zip"
   - poppler/
