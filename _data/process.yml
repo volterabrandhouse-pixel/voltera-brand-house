@@ -1,11 +1,11 @@
-﻿- step: "01"
+- step: "01"
   phase: "Discovery Call & Visit"
   description: "We understand your offerings, target customers, best-sellers and current challenges."
-  duration: "Day 1â€“2"
+  duration: "Day 1–2"
 
 - step: "02"
   phase: "Content Shoot"
-  description: "A dedicated shoot day at your location to capture photo and video for the first 2â€“3 weeks of posts."
+  description: "A dedicated shoot day at your location to capture photo and video for the first 2–3 weeks of posts."
   duration: "Week 1"
 
 - step: "03"

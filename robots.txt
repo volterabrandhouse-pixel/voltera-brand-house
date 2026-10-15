@@ -1,4 +1,4 @@
-﻿User-agent: *
+User-agent: *
 Disallow:
 
-Sitemap: https://voltera.brandhouse.in/sitemap.xml
+Sitemap: https://volterabrandhouse-pixel.github.io/voltera-brand-house/sitemap.xml

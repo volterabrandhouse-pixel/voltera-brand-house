@@ -19,6 +19,7 @@ function dismissLoader() {
   if (!loader) return;
 
   loader.classList.add('is-hidden');
+  document.body.removeAttribute('aria-busy');
   setTimeout(() => {
     document.querySelectorAll('.oh-inner').forEach(el => el.classList.add('is-visible'));
   }, 450);
@@ -66,14 +67,21 @@ handleNavScroll();
 const navToggle  = document.getElementById('nav-toggle');
 const mobileMenu = document.getElementById('mobile-menu');
 
+// Focusable elements inside mobile menu for focus trap
+const FOCUSABLE = 'a[href], button:not([disabled]), input, textarea, select, [tabindex]:not([tabindex="-1"])';
+
 function openMobileMenu() {
   if (!mobileMenu || !navToggle) return;
   mobileMenu.classList.add('is-open');
   navToggle.classList.add('is-open');
   navToggle.setAttribute('aria-expanded', 'true');
+  navToggle.setAttribute('aria-label', 'Close menu');
   mobileMenu.setAttribute('aria-hidden', 'false');
   document.body.style.overflow = 'hidden';
   if (siteHeader) siteHeader.classList.add('menu-is-open');
+  // Move focus to first menu link
+  const firstLink = mobileMenu.querySelector(FOCUSABLE);
+  if (firstLink) setTimeout(() => firstLink.focus(), 50);
 }
 
 function closeMobileMenu() {
@@ -81,6 +89,7 @@ function closeMobileMenu() {
   mobileMenu.classList.remove('is-open');
   navToggle.classList.remove('is-open');
   navToggle.setAttribute('aria-expanded', 'false');
+  navToggle.setAttribute('aria-label', 'Open menu');
   mobileMenu.setAttribute('aria-hidden', 'true');
   document.body.style.overflow = '';
   if (siteHeader) siteHeader.classList.remove('menu-is-open');
@@ -91,10 +100,24 @@ if (navToggle && mobileMenu) {
     mobileMenu.classList.contains('is-open') ? closeMobileMenu() : openMobileMenu();
   });
   mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', closeMobileMenu));
+
+  // Focus trap: keep Tab/Shift+Tab inside menu while open
   document.addEventListener('keydown', e => {
     if (e.key === 'Escape' && mobileMenu.classList.contains('is-open')) {
       closeMobileMenu();
       navToggle.focus();
+      return;
+    }
+    if (e.key === 'Tab' && mobileMenu.classList.contains('is-open')) {
+      const focusableEls = Array.from(mobileMenu.querySelectorAll(FOCUSABLE));
+      if (focusableEls.length === 0) return;
+      const first = focusableEls[0];
+      const last  = focusableEls[focusableEls.length - 1];
+      if (e.shiftKey) {
+        if (document.activeElement === first) { e.preventDefault(); last.focus(); }
+      } else {
+        if (document.activeElement === last)  { e.preventDefault(); first.focus(); }
+      }
     }
   });
 }
@@ -182,6 +205,17 @@ sections.forEach(s => sectionObserver.observe(s));
 /* ----- CONTACT FORM ------------------------------------------- */
 const contactForm = document.getElementById('contact-form');
 const formStatus  = document.getElementById('form-status');
+
+// Clear stale validation message whenever user edits any field
+if (contactForm && formStatus) {
+  contactForm.querySelectorAll('input, textarea').forEach(field => {
+    field.addEventListener('input', () => {
+      if (formStatus.textContent && !formStatus.classList.contains('is-success')) {
+        formStatus.textContent = '';
+      }
+    });
+  });
+}
 
 if (contactForm) {
   contactForm.addEventListener('submit', e => {

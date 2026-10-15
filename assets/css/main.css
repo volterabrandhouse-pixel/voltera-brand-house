@@ -540,6 +540,8 @@ ol {
   justify-content: flex-end;
   background: var(--bg-void);
   overflow: hidden;
+  /* Prevent hero image and gradient layers from causing horizontal overflow */
+  contain: layout paint;
 }
 
 /* Full-bleed image layer */
@@ -652,6 +654,9 @@ ol {
   display: flex;
   align-items: center;
   gap: 0.75rem;
+  flex-wrap: wrap;
+  overflow-wrap: break-word;
+  word-break: break-word;
 }
 
 .overture-eyebrow::before {
@@ -794,7 +799,7 @@ ol {
     display: grid;
     grid-template-columns: repeat(3, auto);
     justify-content: start;
-    gap: var(--sp-md);
+    gap: var(--sp-sm);
     padding-top: calc(var(--nav-h) + var(--sp-sm));
     margin-bottom: var(--sp-md);
     padding-bottom: 0;
@@ -847,7 +852,9 @@ ol {
 
 @media (max-width: 480px) {
   .overture-headline {
-    font-size: clamp(2.2rem, 11vw, 3rem);
+    font-size: clamp(1.95rem, 10.5vw, 2.6rem);
+    letter-spacing: -0.03em;
+    max-width: 100%;
   }
 
   .overture-meta {
@@ -856,6 +863,42 @@ ol {
 
   .overture-meta-num {
     font-size: 1.15rem;
+  }
+}
+
+/* Ultra-narrow: 320px - 360px */
+@media (max-width: 360px) {
+  .overture-headline {
+    font-size: clamp(1.75rem, 10vw, 2.2rem);
+    letter-spacing: -0.02em;
+  }
+
+  .overture-eyebrow {
+    font-size: 0.55rem;
+    letter-spacing: 0.10em;
+    gap: 0.4rem;
+  }
+
+  .overture-eyebrow::before {
+    width: 14px;
+  }
+
+  .overture-meta {
+    gap: 0.6rem;
+  }
+
+  .overture-meta-num {
+    font-size: 1rem;
+  }
+
+  .overture-meta-label {
+    font-size: 0.44rem;
+    letter-spacing: 0.1em;
+  }
+
+  .btn {
+    font-size: 0.8rem;
+    padding: 0.75rem 1.4rem;
   }
 }
 
@@ -1555,7 +1598,7 @@ ol {
 }
 
 .ind-item:hover {
-  padding-left: 1.5rem;
+  padding-left: 1rem; /* reduced from 1.5rem to prevent overflow on narrow screens */
 }
 
 .ind-num {
@@ -1698,8 +1741,8 @@ ol {
 
 .pricing-hero-badge {
   position: absolute;
-  top: var(--sp-lg);
-  right: var(--sp-lg);
+  top: var(--sp-md);
+  right: var(--sp-md);
   font-family: var(--font-mono);
   font-size: 0.56rem;
   font-weight: 700;
@@ -1709,6 +1752,7 @@ ol {
   background: var(--accent);
   padding: 0.28rem 1rem;
   border-radius: var(--r-full);
+  z-index: 2;
 }
 
 .pricing-hero-content {
@@ -2110,6 +2154,10 @@ ol {
   .voices-header {
     grid-template-columns: 1fr;
     gap: var(--sp-md);
+  }
+
+  .voices-stage {
+    min-height: 200px;
   }
 }
 
@@ -2653,6 +2701,8 @@ ol {
   position: fixed;
   bottom: var(--sp-lg);
   right: var(--sp-lg);
+  bottom: calc(var(--sp-lg) + env(safe-area-inset-bottom, 0px));
+  right: calc(var(--sp-lg) + env(safe-area-inset-right, 0px));
   width: 52px;
   height: 52px;
   border-radius: 50%;
@@ -2810,7 +2860,8 @@ ol {
 @media (max-width: 480px) {
   .overture-eyebrow {
     font-size: 0.6rem;
-    letter-spacing: 0.18em;
+    letter-spacing: 0.14em;
+    /* Reduce letter-spacing on eyebrow to prevent overflow at 320px */
   }
 
   .overture-content {
@@ -2827,7 +2878,13 @@ ol {
   }
 
   .pricing-hero {
-    padding: var(--sp-lg) var(--sp-sm);
+    padding: var(--sp-2xl) var(--sp-sm) var(--sp-lg);
+    /* Extra top padding to clear the badge */
+  }
+
+  .pricing-hero-badge {
+    top: var(--sp-sm);
+    right: var(--sp-sm);
   }
 
   .pricing-hero-specs {
@@ -2850,6 +2907,7 @@ ol {
   }
 }
 
+
 /* Touch target minimum sizes */
 .btn,
 .nav-cta,
@@ -2859,6 +2917,7 @@ ol {
 .ps-cta,
 .pricing-hero-cta {
   -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
 }
 
 .btn,
